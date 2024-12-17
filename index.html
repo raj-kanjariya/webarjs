@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AR.js Debug Test</title>
+  <title>Custom Marker with AR.js</title>
   <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@ar-js-org/ar.js@3.4.1/aframe/build/aframe-ar.min.js"></script>
 </head>
 <body style="margin: 0; overflow: hidden;">
-  <a-scene embedded arjs="debugUIEnabled: true; sourceType: webcam;">
-    <!-- <a-marker preset="hiro"> -->
-        <a-marker preset="custom" type="pattern" url="pattern-Clear spcae logo_H Exposit colo.patt"></a-marker>
-      <a-sphere position="0 0.5 0" radius="0.5" material="color: yellow;"></a-sphere>
+  <a-scene embedded arjs="debugUIEnabled: true;">
+    <!-- Use custom marker -->
+    <a-marker preset="custom" type="pattern" url="pattern-Clear spcae logo_H Exposit colo.patt">
+      <!-- Add 3D model -->
+      <a-entity gltf-model="Double Sofa With Pillow.glb" position="0 0 0" scale="0.5 0.5 0.5"></a-entity>
     </a-marker>
-    <a-entity camera></a-entity>
+    <!-- Adjust camera FOV -->
+    <a-entity camera="fov: 70"></a-entity>
   </a-scene>
 </body>
 </html>
