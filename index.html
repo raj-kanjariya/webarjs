@@ -3,26 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AR.js Image Tracking</title>
-
-  <script src="aframe.min.js"></script>
-  <script src="aframe-ar.min.js"></script>
-
+  <title>AR.js Minimal Test</title>
+  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/ar.js/aframe/build/aframe-ar.min.js"></script>
 </head>
 <body style="margin: 0; overflow: hidden;">
-  <!-- AR.js Scene -->
-  <a-scene embedded arjs>
-    <!-- Define Image Marker -->
-    <a-marker preset="custom" type="pattern" url="pattern-Clear spcae logo_H Exposit colo.patt">
-      <!-- Add 3D Object -->
-      <a-entity 
-        gltf-model="Double Sofa With Pillow.glb" 
-        position="0 0 0" 
-        scale="1 1 1" 
-        rotation="0 180 0">
-      </a-entity>
+  <a-scene embedded arjs="sourceType: webcam;">
+    <a-marker preset="hiro">
+      <a-box position="0 0.5 0" material="color: blue;"></a-box>
     </a-marker>
-    <!-- Camera -->
     <a-entity camera></a-entity>
   </a-scene>
 </body>
